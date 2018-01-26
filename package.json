@@ -1,7 +1,7 @@
 {
-  "name": "swagger-node-runner",
-  "version": "0.7.3",
-  "description": "Swagger loader and middleware utilities",
+  "name": "defra-swagger-node-runner",
+  "version": "0.0.1",
+  "description": "A fork of swagger-node-runner <https://github.com/theganyo/swagger-node-runner> compatible with hapi.js 17",
   "keywords": [
     "swagger",
     "api",
@@ -12,13 +12,20 @@
     "swagger-hapi",
     "swagger-sails"
   ],
-  "author": "Scott Ganyo <sganyo@apigee.com>",
-  "license": "MIT",
+  "engines": {
+    "node": ">=8.x"
+  },
+  "author": "Department for Environment, Food and Rural Affairs <https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs>.",
+  "license": "SEE LICENSE IN LICENSE",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theganyo/swagger-node-runner.git"
+    "url": "https://github.com/DEFRA/swagger-hapi"
   },
+  "bugs": {
+    "url": "https://github.com/DEFRA/swagger-node-runner/issues"
+  },
+  "homepage": "https://github.com/DEFRA/swagger-node-runner#readme",
   "dependencies": {
     "async": "^1.5.0",
     "bagpipes": "^0.1.0",
@@ -26,26 +33,26 @@
     "config": "^1.16.0",
     "cors": "^2.5.3",
     "debug": "^2.1.3",
+    "express": "^4.13.3",
+    "hapi": "^17.0.0",
     "js-yaml": "^3.3.0",
     "lodash": "^3.6.0",
     "multer": "^1.0.6",
     "parseurl": "^1.3.0",
     "qs": "^6.4.0",
+    "restify": "^5.2.0",
     "sway": "^1.0.0",
     "type-is": "^1.6.9"
   },
   "devDependencies": {
     "connect": "^3.4.0",
-    "coveralls": "^2.11.4",
-    "express": "^4.13.3",
-    "hapi": "^10.0.0",
+    "coveralls": "^3.0.0",
     "istanbul": "^0.4.0",
-    "mocha": "^2.3.0",
+    "mocha": "^5.0.0",
     "mocha-lcov-reporter": "^1.0.0",
-    "restify": "^5.2.0",
-    "should": "^7.1.0",
-    "sinon": "^1.17.2",
-    "supertest": "^1.1.0"
+    "should": "^13.2.1",
+    "sinon": "^4.2.2",
+    "supertest": "^3.0.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha -u exports -R spec test test/lib test/fittings",
