@@ -21,7 +21,11 @@ describe('hapi_middleware', function() {
     });
 
     after(function(done) {
-      this.app.stop(done);
+      var self = this;
+      (async function () {
+        await self.app.stop();
+        done();
+      })();
     });
 
     require('./common')();
@@ -34,7 +38,11 @@ describe('hapi_middleware', function() {
     });
 
     after(function(done) {
-      this.app.stop(done);
+      var self = this;
+      (async function () {
+        await self.app.stop();
+        done();
+      })();
     });
 
     require('./common_mock')();
@@ -43,7 +51,9 @@ describe('hapi_middleware', function() {
 
 function createServer(config, done) {
   var hapi = require('hapi');
-  this.app = new hapi.Server();
+  this.app = new hapi.Server({
+    port: 7236
+  });
   var self = this;
   SwaggerRunner.create(config, function(err, r) {
     if (err) {
@@ -53,14 +63,19 @@ function createServer(config, done) {
     self.runner = r;
     var middleware = self.runner.hapiMiddleware();
 
-    self.app.address = function() { return { port: 7236 }; };
-    self.app.connection(self.app.address());
+    (async function () {
+      try {
+        self.app.events.on('start', function() {
+          done();
+        });
+        await self.app.register(middleware.plugin);
+        await self.app.start();
+      } catch (err) {
+        console.error('Failed to load plugin:', err);
+        done(err);
+      }
+    })();
 
-    self.app.register(middleware.plugin, function(err) {
-      if (err) { return console.error('Failed to load plugin:', err); }
-      self.app.start(function() {
-        done();
-      });
-    });
+    self.app.address = function() { return { port: 7236 }; };
   });
 }

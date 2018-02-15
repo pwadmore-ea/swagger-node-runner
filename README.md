@@ -1,19 +1,37 @@
-# Middleware for Swagger projects
+# Hapi 17 compatible swagger-node-runner
 
-[![Build Status](https://travis-ci.org/theganyo/swagger-node-runner.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-node-runner)
+This project is a [hapi.js](https://hapijs.com/) 17 compatible fork of the [swagger-node-runner](https://github.com/theganyo/swagger-node-runner) project. It should be used with the Hapi 17
+[compatible fork](https://github.com/DEFRA/swagger-hapi) of [swagger-hapi](https://github.com/apigee-127/swagger-hapi).
 
-[![Coverage Status](https://coveralls.io/repos/theganyo/swagger-node-runner/badge.svg?branch=sway&service=github)](https://coveralls.io/github/theganyo/swagger-node-runner)
+## Using this project
+This project should be used as a dependency of [defra-swagger-hapi](https://github.com/DEFRA/swagger-hapi).
 
-This is the middleware engine used by the [Swagger](https://www.npmjs.com/package/swagger) project. It is designed to handle all your Swagger-driven API project needs with minimal fuss - and maximal flexibility.
+## What about Connect, Express, Restify and Sails?
+This project exists SOLEY to provide a Hapi 17 compatible version of the original swagger-node-runner. No attempt has been made to support changes in Connect, Express, Restify or Sails. Use the original swagger-node-runner project if you do not require support for Hapi 17.
 
-### Important upgrade note!
+## Contributing to this project
 
-If you're upgrading a swagger-node generated project, you must follow the upgrade instructions in the [release notes](https://github.com/theganyo/swagger-node-runner/releases/tag/v0.6.0) for the upgrade to succeed.
+If you have an idea you'd like to contribute please log an issue.
 
-Also, be sure to read the following release notes for more information on other changes and enhancements:
+All contributions should be submitted via a pull request.
 
-https://github.com/theganyo/swagger-node-runner/releases/tag/v0.6.4  
-https://github.com/theganyo/swagger-node-runner/releases/tag/v0.6.10  
-https://github.com/theganyo/swagger-node-runner/releases/tag/v0.6.11  
-https://github.com/theganyo/swagger-node-runner/releases/tag/v0.7.0  
-https://github.com/theganyo/swagger-node-runner/releases/tag/v0.7.1
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at
+
+<http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3>
+
+The following attribution statement MUST be cited in your products and applications when using this information.
+
+>Contains public sector information licensed under the Open Government license v3
+
+### About the license
+
+The Open Government Licence (OGL) was developed by the Controller of Her Majesty's Stationery Office (HMSO) to enable information providers in the public sector to license the use and re-use of their information under a common open licence.
+
+It is designed to encourage use and re-use of information freely and flexibly, with only a few conditions.
+
+### Compliance with the licencing terms of the original work
+
+In accordance with the MIT licencing terms of the original work on which this work is based,
+a copy of the original licence and copyright notice is included within the file ORIGINAL-LICENSE.
