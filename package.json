@@ -1,6 +1,6 @@
 {
   "name": "defra-swagger-node-runner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A fork of swagger-node-runner <https://github.com/theganyo/swagger-node-runner> compatible with hapi.js 17",
   "keywords": [
     "swagger",
@@ -20,7 +20,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DEFRA/swagger-hapi"
+    "url": "https://github.com/DEFRA/swagger-node-runner"
   },
   "bugs": {
     "url": "https://github.com/DEFRA/swagger-node-runner/issues"
