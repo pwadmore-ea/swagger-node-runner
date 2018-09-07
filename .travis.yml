@@ -4,5 +4,11 @@ node_js:
   - "8"
 sudo: false
 
+branches:
+  only:
+    - master
+    - /^feature.*$/
+    - /^fix.*$/
+
 after_success:
   npm run coveralls
