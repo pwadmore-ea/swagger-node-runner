@@ -10,5 +10,16 @@ branches:
     - /^feature.*$/
     - /^fix.*$/
 
-after_success:
-  npm run coveralls
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+script:
+  npm test
+
+after_script:
+./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT  
+
+addons:
+  code_climate:
+    secure: "OCWIg8qk7hp9grezc9t9isOZB0cRn9p6ESVjw+TTqdJzRSilkcnfZMNQWQzF6XheCxy76GZYsv5CbnbPL05zc2xIYGOV+wfRs73G88UT4IMBegJE3XODOTrt2z7e2x4XW2KpxLfzivvaAgdi/9Q2BZgU0q4jzhRgqmR9iufl72xKa1HaMrGdF0dbUmyBbYICG76+bWJu4FUxHIyAn1eFKZyr0GT1c++0HJaiNWgGw7z8w95auThFmgJzbAeh77M0+7jmI33aMUylhyFU0RChZCuglJTx4FtQ/IttBQvqe20w04DWNN0wcXyjtm/YaFUD/aTlnjDUDGIBeAITiKLwHz6pnpeQbiFicIx7/keeVOgV0pAmWFydmgA0ibeea9vvGuRlYkQPGO6gHZ0eJ5wK9Q91sbc8ExizD9xAcjBaAoFd9VqLbr4WRXw+gM1sIfSFv+1eCqwGCp5iU9iAlp3cXu3vGuqiN30+y0STqVGfXnyl11oFQ+fFraaU6mXKdI+mP2jXPu7w2sQfK0KG/kwIzr79i41NLeY1dGBeaWPESMa27Fq+xEbDewYssbavS51/QU1dNTM4SWE4QPKiu6PZa8o/Vf5FgvVM70esUziMknqzPEgCznnfZjZIaC3pN47YUFttg0X0yjK9HFcbp2lNOBRNpuVnBFbKO6d23N8M9CI="
