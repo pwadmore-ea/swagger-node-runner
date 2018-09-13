@@ -1,5 +1,9 @@
 # Hapi 17 compatible swagger-node-runner
 
+[![Build Status](https://travis-ci.com/pwadmore-ea/swagger-node-runner.svg?branch=feature/integrate-with-other-tools)](https://travis-ci.com/pwadmore-ea/swagger-node-runner)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ef4e8511bb8563300abe/maintainability)](https://codeclimate.com/github/pwadmore-ea/swagger-node-runner/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ef4e8511bb8563300abe/test_coverage)](https://codeclimate.com/github/pwadmore-ea/swagger-node-runner/test_coverage)
+
 This project is a [hapi.js](https://hapijs.com/) 17 compatible fork of the [swagger-node-runner](https://github.com/theganyo/swagger-node-runner) project. It should be used with the Hapi 17
 [compatible fork](https://github.com/DEFRA/swagger-hapi) of [swagger-hapi](https://github.com/apigee-127/swagger-hapi).
 
